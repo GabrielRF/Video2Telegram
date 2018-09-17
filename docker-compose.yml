@@ -1,0 +1,10 @@
+file2gif:
+    image: 
+    environmet:
+        - BOT_TOKEN=
+        - FOLDER=
+        - EXTENSION=
+        - DESTINATION=
+    restart: always
+    volumes:
+        - host_folder:container_folder
