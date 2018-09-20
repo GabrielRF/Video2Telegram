@@ -10,8 +10,6 @@ DESTINATION = os.getenv('DESTINATION')
 bot = telebot.TeleBot(TOKEN)
 notifier = inotify.adapters.InotifyTree(FOLDER)
 
-bot.send_message(DESTINATION, 'Running')
-
 for event in notifier.event_gen():
     if event is not None:
         if 'IN_CLOSE_WRITE' in event[1] and EXTENSION in event[3]:
