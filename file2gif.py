@@ -14,7 +14,7 @@ bot.send_message(DESTINATION, 'Running')
 
 for event in notifier.event_gen():
     if event is not None:
-        if 'IN_CLOSE_WRITE' in event[1]:
+        if 'IN_CLOSE_WRITE' in event[1] and EXTENSION in event[3]:
             file_path = event[2] + '/' + event[3]
             try:
                 bot.send_video(DESTINATION, event[3])
