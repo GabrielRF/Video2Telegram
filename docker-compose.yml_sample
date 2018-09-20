@@ -1,0 +1,10 @@
+file2gif:
+    build: .
+    environment:
+        - BOT_TOKEN=
+        - FOLDER=/
+        - EXTENSION=mp4
+        - DESTINATION=
+    restart: always
+    volumes:
+        - host_folder:container_folder
