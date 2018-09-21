@@ -56,22 +56,22 @@ python file2gif.py
 
 Open the Docker App on your Synology Device. On `Registry`, look for `video2telegram` and double click the result to download the image. 
 
-![Synology Registry](synology_registry.png)
+![Synology Registry](img/synology_registry.png)
 
 On the `Image` tab, check if the download is completed. Once completed, double click the image and set it as follows.
 
-![Synology Container Launch image 1](synology_container_1.png)
+![Synology Container Launch image 1](img/synology_container_1.png)
 
 `Container Name` is optional. `Enable auto-restart` is recommended.
 Click on `Advanced Settings` and go to tab `Volume`. Click on `Add Folder` and find your camera folder. 
 
-![Synology Container Launch image 2](synology_container_2.png)
+![Synology Container Launch image 2](img/synology_container_2.png)
 
 Click on `Select`. Go to tab `Environment` and add 4 variables: `BOT_TOKEN`, `FOLDER`, `DESTINATION` and `EXTENSION`
 
 Your settings should look similar to this image:
 
-![Synology Container Launch image 3](synology_container_3.png)
+![Synology Container Launch image 3](img/synology_container_3.png)
 
 Click on `Apply` and it should be ready and running.
 
