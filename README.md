@@ -2,6 +2,14 @@
 
 ![Dog trying to enter a door with a stick on its mouth](https://media.giphy.com/media/xIsRzrb2F4xgI/giphy.gif)
 
+* [About](#about)
+* [Setup](#setup)
+  * [Docker Compose](#docker-compose)
+  * [Python](#python)
+  * [Synology Docker](#synology-docker)
+* [Contribute](#contribute)
+* [Contact](#contact)
+
 ## About
 
 This docker container checks if a new file is created on a folder and sends it to a person/group/channel using [Telegram Messenger](https://telegram.org).
@@ -67,7 +75,7 @@ Click on `Advanced Settings` and go to tab `Volume`. Click on `Add Folder` and f
 
 ![Synology Container Launch image 2](img/synology_container_2.png)
 
-Click on `Select`. Go to tab `Environment` and add 4 variables: `BOT_TOKEN`, `FOLDER`, `DESTINATION` and `EXTENSION`
+Click on `Select`. Go to tab `Environment` and add 4 variables: `BOT_TOKEN`, `FOLDER`, `DESTINATION` and `EXTENSION`. Check [Docker Compose](#docker-compose) topic for details.
 
 Your settings should look similar to this image:
 
