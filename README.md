@@ -8,13 +8,13 @@
   * [Python](#python)
   * [Synology Docker](#synology-docker)
 * [Contribute](#contribute)
-* [Contact](#contact)
+* [Contact](#contact-me)
 
 ## About
 
 This docker container checks if a new file is created on a folder and sends it to a person/group/channel using [Telegram Messenger](https://telegram.org).
 
-The idea behind this project is to send me a gif everytime my camera get movement. The camera is pointed to my door, this way I can see on real time who is entering or leaving my place. Also, another unexpected benefit of using this project is to have a cloud backup of my camera for free. 
+The idea behind this project is to send me a gif everytime my camera detects movement. The camera is pointed to my door, this way I can see on real time who is entering or leaving my place. Also, another unexpected benefit of using this project is to have a cloud backup of my camera for free. 
 
 ## Setup
 
