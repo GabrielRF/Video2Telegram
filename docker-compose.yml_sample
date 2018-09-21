@@ -1,8 +1,8 @@
 file2gif:
-    build: .
+    image: gabrielrf/video2telegram
     environment:
         - BOT_TOKEN=
-        - FOLDER=/
+        - FOLDER=/mnt
         - EXTENSION=mp4
         - DESTINATION=
     restart: always
