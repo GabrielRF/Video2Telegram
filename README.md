@@ -1,3 +1,5 @@
+[![](https://dockerbuildbadges.quelltext.eu/status.svg?organization=gabrielrf&repository=video2telegram)](https://hub.docker.com/r/gabrielrf/video2telegram/builds/)
+
 # Video to Telegram
 
 ![Dog trying to enter a door with a stick on its mouth](https://media.giphy.com/media/xIsRzrb2F4xgI/giphy.gif)
