@@ -1,11 +1,12 @@
 FROM python:3.7-alpine
 
-RUN apk --no-cache --virtual build add build-base libffi-dev openssl-dev && rm -rf ~/.pip/ 
+RUN apk --no-cache --virtual build add build-base libffi-dev openssl-dev jpeg-dev && rm -rf ~/.pip/
 RUN pip install python-telegram-bot
 RUN pip install inotify
 RUN pip install moviepy
+RUN pip install requests
 RUN apk del build
 
-ADD file2gif.py / 
+ADD file2gif.py /
 
 CMD [ "python", "./file2gif.py" ]
