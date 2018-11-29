@@ -24,7 +24,7 @@ for event in notifier.event_gen():
                      .resize(float(RESIZE))
                      .speedx(float(SPEEDX))
                     )
-                clip.write_gif(gif_path, fps=float(FPS))
+                clip.write_gif(gif_path, fps=float(FPS), verbose=False, progress_bar=False)
                 file_open = open(gif_path, 'rb')
                 bot.send_chat_action(DESTINATION, 'upload_video')
                 bot.send_animation(DESTINATION, file_open, timeout=300)
