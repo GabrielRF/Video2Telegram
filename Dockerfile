@@ -1,17 +1,20 @@
-# FROM debian:jessie-slim
 FROM ubuntu:bionic
 
-RUN apt-get update
-RUN apt-get -y upgrade
-RUN apt-get -y install python
-RUN apt-get -y install build-essential libssl-dev libffi-dev python-dev
-RUN apt-get -y install python-pip
-RUN apt-get -y install ffmpeg
-RUN pip install --upgrade setuptools
-RUN pip install python-telegram-bot
-RUN pip install inotify
-RUN pip install requests
-RUN pip install moviepy
+RUN apt-get -y update && \
+    apt-get -y upgrade && \
+    apt-get install -y python build-essential \
+    libssl-dev \
+    libffi-dev \
+    python-dev \
+    python-pip \
+    ffmpeg && \
+    rm -rf /var/lib/apt/lists/* && \
+    rm -f /tmp/*
+RUN pip install --upgrade setuptools \
+    python-telegram-bot \
+    inotify \
+    requests \
+    moviepy
 
 ADD file2gif.py /
 

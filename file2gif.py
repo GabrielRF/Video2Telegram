@@ -28,7 +28,9 @@ for event in notifier.event_gen():
                     )
                 clip.write_gif(gif_path, fps=FPS)
                 file_open = open(gif_path, 'rb')
-                bot.send_animation(DESTINATION, file_open, timeout=120)
+                bot.send_chat_action(DESTINATION, 'upload_video')
+                bot.send_animation(DESTINATION, file_open, timeout=300)
             except:
                 file_open = open(file_path, 'rb')
-                bot.send_document(DESTINATION, file_open)
+                bot.send_chat_action(DESTINATION, 'upload_document')
+                bot.send_document(DESTINATION, file_open, timeout=600)
