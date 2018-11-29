@@ -1,6 +1,8 @@
 import inotify.adapters
 import os
 import telegram
+#from moviepy.editor import *
+# import ffmpy
 from moviepy.editor import *
 
 TOKEN = os.getenv('BOT_TOKEN')
@@ -19,13 +21,14 @@ for event in notifier.event_gen():
         if 'IN_CLOSE_WRITE' in event[1] and EXTENSION in event[3]:
             file_path = event[2] + '/' + event[3]
             try:
+                gif_path = file_path.replace('.mp4','.gif')
                 clip = (VideoFileClip(file_path)
                      .resize(RESIZE)
                      .speedx(SPEEDX)
                     )
                 clip.write_gif(gif_path, fps=FPS)
                 file_open = open(gif_path, 'rb')
-                bot.send_animation(DESTINATION, file_open)
+                bot.send_animation(DESTINATION, file_open, timeout=120)
             except:
                 file_open = open(file_path, 'rb')
                 bot.send_document(DESTINATION, file_open)

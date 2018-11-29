@@ -1,11 +1,17 @@
-FROM python:3.7-alpine
+# FROM debian:jessie-slim
+FROM ubuntu:bionic
 
-RUN apk --no-cache --virtual build add build-base libffi-dev openssl-dev jpeg-dev && rm -rf ~/.pip/
+RUN apt-get update
+RUN apt-get -y upgrade
+RUN apt-get -y install python
+RUN apt-get -y install build-essential libssl-dev libffi-dev python-dev
+RUN apt-get -y install python-pip
+RUN apt-get -y install ffmpeg
+RUN pip install --upgrade setuptools
 RUN pip install python-telegram-bot
 RUN pip install inotify
-RUN pip install moviepy
 RUN pip install requests
-RUN apk del build
+RUN pip install moviepy
 
 ADD file2gif.py /
 
