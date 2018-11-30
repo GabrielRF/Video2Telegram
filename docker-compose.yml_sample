@@ -5,6 +5,9 @@ file2gif:
         - FOLDER=/mnt
         - EXTENSION=mp4
         - DESTINATION=
+        - SPEEDX=2
+        - RESIZE=0.8
+        - FPS=5
     restart: always
     volumes:
         - host_folder:container_folder
