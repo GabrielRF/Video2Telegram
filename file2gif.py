@@ -1,7 +1,7 @@
 import inotify.adapters
 import os
 import telegram
-from moviepy.editor import *
+import ffmpy
 
 TOKEN = os.getenv('BOT_TOKEN')
 FOLDER = os.getenv('FOLDER', '/tmp/')
@@ -20,11 +20,11 @@ for event in notifier.event_gen():
             file_path = event[2] + '/' + event[3]
             try:
                 gif_path = '/tmp/file2gif.gif'
-                clip = (VideoFileClip(file_path)
-                     .resize(float(RESIZE))
-                     .speedx(float(SPEEDX))
-                    )
-                clip.write_gif(gif_path, fps=float(FPS), verbose=False, progress_bar=False)
+                ff = ffmpy.FFmpeg(
+                    inputs={file_path: None},
+                    outputs={gif_path: None}
+                )
+                ff.run()
                 file_open = open(gif_path, 'rb')
                 bot.send_chat_action(DESTINATION, 'upload_video')
                 bot.send_animation(DESTINATION, file_open, timeout=300)
