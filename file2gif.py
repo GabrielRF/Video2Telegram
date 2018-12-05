@@ -19,7 +19,7 @@ for event in notifier.event_gen():
         if 'IN_CLOSE_WRITE' in event[1] and EXTENSION in event[3]:
             file_path = event[2] + '/' + event[3]
             try:
-                ggif_path = '/tmp/file2gif.gif'
+                gif_path = '/tmp/file2gif.gif'
                 clip = (VideoFileClip(file_path)
                      .resize(float(RESIZE))
                      .speedx(float(SPEEDX))
