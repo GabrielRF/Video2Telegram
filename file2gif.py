@@ -25,7 +25,6 @@ for event in notifier.event_gen():
                 file_open = open(gif_path, 'rb')
                 bot.send_chat_action(DESTINATION, 'upload_video')
                 bot.send_animation(DESTINATION, file_open, timeout=600)
-                os.remove(gif_path)
             except:
                 file_open = open(file_path, 'rb')
                 bot.send_chat_action(DESTINATION, 'upload_document')
