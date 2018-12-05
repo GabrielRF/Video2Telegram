@@ -31,9 +31,6 @@ file2gif:
         - FOLDER=/
         - EXTENSION=mp4
         - DESTINATION=
-        - SPEEDX=2
-        - RESIZE=0.8
-        - FPS=5
     restart: always
     volumes:
         - host_folder:container_folder
@@ -46,12 +43,6 @@ file2gif:
 `EXTENSION`: The extension of the file that should be sent. Usually `mp4` is the case.
 
 `DESTINATION`: To whom the message will be sent.
-
-`SPEEDX`: 1 means the gif speed will be the same as the video speed. 2 means to double the speed.
-
-`RESIZE`: To change the video size. It's recommended to make it smaller so the upload gets faster.
-
-`FPS`: How many frames per second the gif will have.
 
 `volumes`: The same folder used on `FOLDER`:Some folder that exists on the container. Suggested: `/mnt`
 
