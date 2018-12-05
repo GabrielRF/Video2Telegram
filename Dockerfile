@@ -14,7 +14,7 @@ RUN pip install --upgrade setuptools \
     python-telegram-bot \
     inotify \
     requests \
-    moviepy
+    ffmpy
 
 ADD file2gif.py /
 
