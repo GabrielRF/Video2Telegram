@@ -19,12 +19,12 @@ for event in notifier.event_gen():
         if 'IN_CLOSE_WRITE' in event[1] and EXTENSION in event[3]:
             file_path = event[2] + '/' + event[3]
             try:
-                gif_path = '/tmp/file2gif.gif'
-                ff = ffmpy.FFmpeg(
-                    inputs={file_path: None},
-                    outputs={gif_path: None}
-                )
-                ff.run()
+                ggif_path = '/tmp/file2gif.gif'
+                clip = (VideoFileClip(file_path)
+                     .resize(float(RESIZE))
+                     .speedx(float(SPEEDX))
+                    )
+                clip.write_gif(gif_path, fps=float(FPS), verbose=False, progress_bar=False)
                 file_open = open(gif_path, 'rb')
                 bot.send_chat_action(DESTINATION, 'upload_video')
                 bot.send_animation(DESTINATION, file_open, timeout=300)
