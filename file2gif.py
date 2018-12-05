@@ -1,7 +1,7 @@
 import inotify.adapters
 import os
 import telegram
-import ffmpy
+from moviepy.editor import *
 
 TOKEN = os.getenv('BOT_TOKEN')
 FOLDER = os.getenv('FOLDER', '/tmp/')
@@ -27,7 +27,7 @@ for event in notifier.event_gen():
                 clip.write_gif(gif_path, fps=float(FPS), verbose=False, progress_bar=False)
                 file_open = open(gif_path, 'rb')
                 bot.send_chat_action(DESTINATION, 'upload_video')
-                bot.send_animation(DESTINATION, file_open, timeout=300)
+                bot.send_animation(DESTINATION, file_open, timeout=600)
                 os.remove(gif_path)
             except:
                 file_open = open(file_path, 'rb')
