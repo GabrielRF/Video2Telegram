@@ -53,6 +53,7 @@ First, run
 ```
 pip install inotify
 pip install pytelegrambotapi
+pip install ffmpy
 ```
 
 to install the libraries needed. Then, open `file2gif.py` and make the necessary adjustments on `BOT_TOKEN`, `FOLDER`, `EXTENSION` and `DESTINATION` as listed above. 
