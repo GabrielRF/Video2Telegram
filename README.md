@@ -79,7 +79,7 @@ Click on `Advanced Settings` and go to tab `Volume`. Click on `Add Folder` and f
 
 ![Synology Container Launch image 2](img/synology_container_2.png)
 
-Click on `Select`. Go to tab `Environment` and add the variables. Check [Docker Compose](#docker-compose) topic for details.
+Click on `Select`. Go to tab `Environment` and add the variables. Check [Docker Compose](#docker-compose) topic for details. Don't create or change other variables.
 
 Your settings should look similar to this image:
 
